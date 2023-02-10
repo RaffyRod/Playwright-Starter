@@ -1,0 +1,27 @@
+{
+  "name": "playwright-starter",
+  "version": "1.0.0",
+  "description": "Playwright test repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaffyRod/Playwright-Starter.git"
+  },
+  "keywords": [
+    "Automation",
+    "Playwright",
+    "E2E"
+  ],
+  "author": "Alfredo Polanco & Raffy Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaffyRod/Playwright-Starter/issues"
+  },
+  "homepage": "https://github.com/RaffyRod/Playwright-Starter#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.30.0"
+  }
+}
