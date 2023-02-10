@@ -4,7 +4,8 @@
   "description": "Playwright test repo",
   "main": "index.js",
   "scripts": {
-    "test": "npm run tests"
+    "test": "npx playwright test",
+    "test-debug": "npx playwright test --debug"
   },
   "repository": {
     "type": "git",
