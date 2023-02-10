@@ -11,7 +11,7 @@ jobs:
           command: npm ci
       - run:
           name: Run tests
-          command: npm run test
+          command: npm run tests
       - store_test_results:
           path: results.xml
 # Invoke jobs via workflows
