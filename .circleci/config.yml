@@ -13,8 +13,7 @@ jobs:
     steps:
       - checkout
       - run: npm i -D @playwright/test
-      - run: npx playwright install
-      - run: npx playwright install chrome
+      - run: npx playwright install --with-deps
       - run:
           name: Run test
           command: PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml npx playwright test --reporter=junit --project=chromium
