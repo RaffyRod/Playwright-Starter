@@ -6,6 +6,16 @@ version: 2.1
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 
 jobs:
+
+  execute-pretier:
+    docker:
+      - image: miyajan/prettier:1.15.3
+    steps:
+      - checkout
+      - run:
+          name: Run Pretier
+          - command: npm run format
+
   run-test:
     docker:
       - image: mcr.microsoft.com/playwright:v1.23.1-focal
