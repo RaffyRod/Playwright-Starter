@@ -7,14 +7,37 @@ version: 2.1
 
 jobs:
 
-  execute-pretier:
+description: |
+  Prettier is an opinionated formatter https://github.com/prettier/prettier
+  Check files that are different from Prettier formatting in your repository.
+  https://github.com/miyajan/prettier-orb
+
+commands:
+  prettier_list_different:
+    description: |
+      Run prettier --list-different over files in the repository.
+    parameters:
+      ignore_path:
+        description: |
+          https://prettier.io/docs/en/cli.html#ignore-path
+          Path to a file containing patterns that describe files to ignore.
+          By default, prettier looks for ./.prettierignore
+        type: string
+        default: ./.prettierignore
+      extension:
+        description: |
+          Files that have this extension are checked by prettier.
+          To specify multiple extensions, use comma separated string. (e.g. yml,yaml)
+        type: string
+    steps:
+      - run:
+          name: Run Prettier << parameters.extension >>
+          command: prettier --ignore-path '<< parameters.ignore_path >>' --list-different **/*.{<< parameters.extension >>}
+
+executors:
+  prettier:
     docker:
       - image: miyajan/prettier:1.15.3
-    steps:
-      - checkout
-      - run:
-          name: Run Prettier
-          command: npm run format
 
   run-test:
     docker:
