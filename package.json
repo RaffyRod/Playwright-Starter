@@ -27,5 +27,8 @@
     "@playwright/test": "^1.30.0",
     "dotenv": "^16.0.3",
     "prettier": "2.8.4"
+  },
+  "dependencies": {
+    "@ngneat/falso": "^6.4.0"
   }
 }
