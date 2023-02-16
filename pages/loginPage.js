@@ -11,13 +11,13 @@ exports.LoginPage = class LoginPage {
 	 */
 	constructor(page) {
 		this.page = page;
-		this.loginHeader = page.getByRole('heading', { name: 'Login' });
+		this.loginHeader = page.getByRole('heading');
 		this.usernameDetails = page.getByText('Username : AdminPassword : admin123');
-		this.userNameInput = page.getByPlaceholder('Username');
+		this.userNameInput = page.locator('[name=username]');
 		this.singleRequiredWarning = page.getByText('Required').first();
-		this.passwordInput = page.getByPlaceholder('Password');
+		this.passwordInput = page.locator('[type=password]');
 		this.doubleRequiredWarning = page.getByText('Required').nth(1);
-		this.loginButton = page.getByRole('button', { name: 'Login' });
+		this.loginButton = page.getByRole('button');
 		this.forgotPasswordButton = page.getByText('Forgot your password?');
 		this.invalidCredentialsAlert = page.getByRole('alert');
 	}
