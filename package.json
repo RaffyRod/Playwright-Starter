@@ -4,7 +4,9 @@
   "description": "Playwright test repo",
   "main": "index.js",
   "scripts": {
-    "test": "npm run tests"
+    "test": "npx playwright test",
+    "test-debug": "npx playwright test --debug",
+    "format": "prettier --write tests && prettier --write pages"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,11 @@
   },
   "homepage": "https://github.com/RaffyRod/Playwright-Starter#readme",
   "devDependencies": {
-    "@playwright/test": "^1.30.0"
+    "@playwright/test": "^1.30.0",
+    "dotenv": "^16.0.3",
+    "prettier": "2.8.4"
+  },
+  "dependencies": {
+    "@ngneat/falso": "^6.4.0"
   }
 }
