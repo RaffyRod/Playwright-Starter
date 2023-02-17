@@ -4,9 +4,9 @@ const { DashboardPage } = require('../pages/dashboardPage');
 
 test.describe('Dashboard tests', () => {
 	test.beforeEach(async ({ page }) => {
-        const login = new LoginPage(page);
+		const login = new LoginPage(page);
 		await page.goto('./login');
-        await login.login();
+		await login.login();
 	});
 
 	test('Check My Actions section', async ({ page }) => {
@@ -16,7 +16,7 @@ test.describe('Dashboard tests', () => {
 	});
 
 	test.afterAll(async ({ page }) => {
-        const dashboard = new DashboardPage(page);
-        await dashboard.logout();
+		const dashboard = new DashboardPage(page);
+		await dashboard.logout();
 	});
 });
