@@ -1,33 +1,32 @@
-// example.spec.js
 const { test } = require('@playwright/test');
 const { LoginPage } = require('../pages/loginPage');
 
-test.describe('Login Test', () => {
+test.describe('Login tests', () => {
 	test.beforeEach(async ({ page }) => {
 		await page.goto('./login');
 	});
 
 	test('Click on Login with empty fields', async ({ page }) => {
-		const loginPage = new LoginPage(page);
-		await loginPage.checkLoginPage();
-		await loginPage.emptyFieldsAlert();
+		const login = new LoginPage(page);
+		await login.checkLoginPage();
+		await login.emptyFieldsAlert();
 	});
 
 	test('Login with invalid username and password', async ({ page }) => {
-		const loginPage = new LoginPage(page);
-		await loginPage.checkLoginPage();
-		await loginPage.invalidLogin();
+		const login = new LoginPage(page);
+		await login.checkLoginPage();
+		await login.invalidLogin();
 	});
 
 	test('Login with just email typed', async ({ page }) => {
-		const loginPage = new LoginPage(page);
-		await loginPage.checkLoginPage();
-		await loginPage.invalidLoginMissingPassword();
+		const login = new LoginPage(page);
+		await login.checkLoginPage();
+		await login.invalidLoginMissingPassword();
 	});
 
 	test('Login with just password typed', async ({ page }) => {
-		const loginPage = new LoginPage(page);
-		await loginPage.checkLoginPage();
-		await loginPage.invalidLoginMissingEmail();
+		const login = new LoginPage(page);
+		await login.checkLoginPage();
+		await login.invalidLoginMissingEmail();
 	});
 });
