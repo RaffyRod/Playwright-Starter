@@ -56,7 +56,19 @@ exports.LoginPage = class LoginPage {
 		await expect(this.singleRequiredWarning).toBeVisible();
 	}
 
+	async login() {
+		await this.checkLoginPage();
+		await this.userNameInput.type(process.env.USER_NAME);
+		await this.passwordInput.type(process.env.USER_PASSWORD);
+		await this.loginButton.click();
+	}
+
 	async pageObjectModel() {
 		await this.checkLoginPage();
+		await this.emptyFieldsAlert();
+		await this.invalidLogin();
+		await this.invalidLoginMissingPassword();
+		await this.invalidLoginMissingEmail();
+		await this.login();
 	}
 };
