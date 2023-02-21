@@ -5,7 +5,7 @@ The following project is an Automation framework designed using Cypress and Java
 | Module           |Number of Scenarios  | Status                                                                |
 | ----------------- |------------ |------------------------------------------------------------------ |
 | Login |5 | :white_check_mark: |
-| User profile |5 | :watch: |
+| User profile |5 | :white_check_mark: |
 | Dashboard |5 | :white_check_mark: |
 | Side menu |5 | :watch: |
 | Admin page |13 | :watch: |
