@@ -7,6 +7,9 @@ exports.DashboardPage = class DashboardPage {
 	 */
 	constructor(page) {
 		this.page = page;
+		this.dashboardPageButton = page.locator(
+			'.oxd-topbar-header-breadcrumb > .oxd-text'
+		);
 		this.userDropDown = page.locator('[class=oxd-userdropdown]');
 		this.logoutButton = page.locator('[class=oxd-userdropdown-link]').nth(3);
 		this.timeAtWorkTitle = page.locator(
@@ -46,6 +49,10 @@ exports.DashboardPage = class DashboardPage {
 	async logout() {
 		await this.userDropDown.click();
 		await this.logoutButton.click();
+	}
+
+	async clickOnDashboardPage() {
+		await this.dashboardPageButton.click();
 	}
 
 	async timeAtWork() {
